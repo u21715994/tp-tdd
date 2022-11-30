@@ -17,7 +17,7 @@ class DrivingLicenceTest {
         String drivingLicenceDriverSocialSecurityNumber = drivingLicence.getDriverSocialSecurityNumber();
         if(drivingLicence.driverSocialSecurityNumberIsNull(drivingLicenceDriverSocialSecurityNumber))
             return false;
-        if(!drivingLicence.driverSocialSecurityNumberNotFormat(drivingLicenceDriverSocialSecurityNumber))
+        if(drivingLicence.driverSocialSecurityNumberNotFormat(drivingLicenceDriverSocialSecurityNumber))
             return false;
         if(!drivingLicence.driverSocialSecurityNumberLenghtIs15(drivingLicenceDriverSocialSecurityNumber))
             return false;
