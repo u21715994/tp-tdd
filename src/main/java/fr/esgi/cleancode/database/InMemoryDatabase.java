@@ -1,5 +1,6 @@
 package fr.esgi.cleancode.database;
 
+import fr.esgi.cleancode.exception.InvalidDriverSocialSecurityNumberException;
 import fr.esgi.cleancode.model.DrivingLicence;
 
 import java.util.Optional;
