@@ -10,6 +10,9 @@ import java.util.UUID;
 public class WithDrawDrivingLicenceService {
     private final InMemoryDatabase database;
     public DrivingLicence withdrawPoint(UUID drivingLicenceID, int point_to_remove){
-        return null;
+        DrivingLicence drivingLicence = database.findById(drivingLicenceID).get();
+        drivingLicence = drivingLicence.withAvailablePoints(drivingLicence.getAvailablePoints() - point_to_remove);
+        database.save(drivingLicenceID, drivingLicence);
+        return drivingLicence;
     }
 }
