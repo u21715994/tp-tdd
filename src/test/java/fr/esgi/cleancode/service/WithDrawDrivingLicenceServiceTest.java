@@ -36,7 +36,6 @@ public class WithDrawDrivingLicenceServiceTest {
         var drivingLicence = withDrawDrivingLicenceService.withdrawPoint(id, point_to_remove);
         when(database.findById(id)).thenReturn(Optional.ofNullable(drivingLicence));
         verify(database).findById(id);
-        //verifyNoMoreInteractions(database);
         assertThat(database.findById(id).get()).usingRecursiveComparison().isEqualTo(drivingLicence);
     }
 }
