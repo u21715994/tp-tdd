@@ -24,9 +24,9 @@ public class DrivingLicenceCreateService {
     }
 
     public boolean validateSecurityNumber(String driverSocialSecurityNumber){
-        if(driverSocialSecurityNumber.length() != 15)
-            return false;
         if(driverSocialSecurityNumber == null)
+            return false;
+        if(driverSocialSecurityNumber.length() != 15)
             return false;
         if(Double.isNaN(parseDouble(driverSocialSecurityNumber)))
             return false;

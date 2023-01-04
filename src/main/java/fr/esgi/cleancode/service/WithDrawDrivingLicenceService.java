@@ -15,6 +15,8 @@ public class WithDrawDrivingLicenceService {
         if(drivingLicence == null)
             throw new ResourceNotFoundException("Permis de conduire introuvable");
         drivingLicence = drivingLicence.withAvailablePoints(drivingLicence.getAvailablePoints() - point_to_remove);
+        if(drivingLicence.getAvailablePoints() < 0)
+            throw new IllegalArgumentException("Nombre de points du permis est inférieur à 0");
         database.save(drivingLicenceID, drivingLicence);
         return drivingLicence;
     }

@@ -27,7 +27,7 @@ public class WithDrawDrivingLicenceServiceTest {
     private InMemoryDatabase database;
 
     @ParameterizedTest
-    @ValueSource(ints = {1,2,3,4,5,6})
+    @ValueSource(ints = {1,2,3,4,5,6, 13})
     void withdraw_point_driving_licence_test(int point_to_remove){
         UUID id = new DrivingLicenceIdGenerationService().generateNewDrivingLicenceId();
         final var given = DrivingLicence.builder().id(id).build();
